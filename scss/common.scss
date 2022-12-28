@@ -1,0 +1,192 @@
+@import 'vars';
+@import 'adaptive';
+
+
+.container {
+   max-width: $maxWidthCont;
+   margin: 0 auto;
+   @include adaptive-value("padding-left", 72, 15, 1);
+   @include adaptive-value("padding-right", 72, 15, 1);
+}
+.logo{
+   display: inline-block;
+   position: relative;
+   @include adaptive-value("width", 188, 100, 1);
+   @include adaptive-value("height", 37, 25, 1);
+   &__img{
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
+
+}
+.button{
+   font-weight: 700;
+   @include adaptive-value("font-size", 18, 14, 1);
+   line-height: 1.5;
+   text-align: center;
+   letter-spacing: 0.015em;
+   background: $background;
+   border: 2px solid $background;
+   border-radius: 8px;
+   color: $textColor2;
+   transition: 0.3s;
+   padding: 12px 40px;
+   @include adaptive-value("padding-left", 40, 15, 1);
+   @include adaptive-value("padding-right", 40, 15, 1);
+   @media(any-hover: hover){
+      &:hover{
+         color: $textColor;
+         background-color: $textColor2;
+      }
+   }
+}
+.button-light{
+   font-weight: 700;
+   @include adaptive-value("font-size", 18, 14, 1);
+   line-height: 1.5;
+   text-align: center;
+   letter-spacing: 0.015em;
+   background: $textColor2;
+   border: 2px solid $textColor2;
+   border-radius: 8px;
+   color: $textColor;
+   transition: 0.3s;
+   padding: 12px 40px;
+   @include adaptive-value("padding-left", 40, 15, 1);
+   @include adaptive-value("padding-right", 40, 15, 1);
+   @media(any-hover: hover){
+      &:hover{
+         color: $textColor2;
+         background-color: $textColor;
+      }
+   }
+}
+
+//cards
+.card-top {
+   min-width: 280px;
+   min-height: 310px;
+   border-radius: 8px;
+   overflow: hidden;
+   color: $textColor2;
+   transition: 0.3s;
+      @media (any-hover:hover){
+         &:hover{
+            transform: translateY(3px);
+         }
+      }
+   &__cont {
+      position: relative;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+   }
+   &__cover{
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #131516 0%, rgba(19, 21, 22, 0) 100%);
+   }
+   &__link {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+   }
+
+   &__info {
+      height: 100%;
+      width: 65%;
+      padding: 24px;
+      justify-content: flex-end;
+   }
+}
+.card-info {
+   display: flex;
+   position: relative;
+   flex-direction: column;
+   gap: 12px;
+   
+   z-index: 4;
+   letter-spacing: 0.015em;
+   line-height: 1.5;
+   &__date {
+      font-weight: 400;
+      @include adaptive-value("font-size", 16, 14, 1);
+      top: 12px;
+      position: relative;
+   }
+
+   &__title {
+      font-weight: 700;
+      @include adaptive-value("font-size", 32, 22, 1);
+   }
+
+   &__desc {
+      font-weight: 400;
+      @include adaptive-value("font-size", 16, 14, 1);
+   }
+
+   &__link {
+      font-weight: 500;
+      color: inherit;
+      @include adaptive-value("font-size", 20, 16, 1);
+      text-decoration-line: underline;
+      z-index: 6;
+      position: relative;
+   }
+}
+
+.card {
+   width: 100%;
+   transition: 0.3s;
+      @media (any-hover:hover){
+         &:hover{
+            transform: translateY(3px);
+         }
+      }
+   &__cont {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media(max-width:650px){
+         flex-direction: column;
+         align-items: flex-start;
+      }
+   }
+
+   &__link {
+      display: inline-block;
+      position: relative;
+      width: 198px;
+      height: 198px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex: 0 0 198px;
+   }
+
+   &__img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   &__info {
+      position: relative;
+      top: -7px;
+   }
+}
